@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bilc1sjwv8x7b"
+path="res://.godot/imported/Agua 3.mp3-b50c7d2455dc1297c6dfa3e69892dc23.mp3str"
+
+[deps]
+
+source_file="res://audio/Agua 3.mp3"
+dest_files=["res://.godot/imported/Agua 3.mp3-b50c7d2455dc1297c6dfa3e69892dc23.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

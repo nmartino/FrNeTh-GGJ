@@ -9,6 +9,7 @@ extends Node2D
 @onready var check_fr_ne_th: Sprite2D = $FrNeTh/CheckFrNeTh
 @onready var check_co_ca: Sprite2D = $FrNeTh/CheckCoCa
 @onready var relleno_fernet: TextureProgressBar = $RellenoFernet
+@onready var agua: AudioStreamPlayer = %Agua
 
 const max_coca:float = 70
 const max_ferne:float = 30
@@ -45,6 +46,7 @@ func _input(event: InputEvent) -> void:
 		explicacion.hide()
 	if event.is_action_released("fill"):
 		animation_player.play("RESET")
+		agua.stop()
 		if animacion_finalizada:
 			animacion_finalizada = false
 		if vaso.value > max_coca:
@@ -68,6 +70,8 @@ func _input(event: InputEvent) -> void:
 func animacion(animacion: String) -> void:
 	if animacion == "girar":
 		animacion_finalizada = true
+		agua.play()
+	
 	
 
 

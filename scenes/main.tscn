@@ -1,31 +1,73 @@
-[gd_scene load_steps=31 format=3 uid="uid://ctd00s6lqnqn2"]
+[gd_scene load_steps=45 format=3 uid="uid://ctd00s6lqnqn2"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_lbwuo"]
 [ext_resource type="Texture2D" uid="uid://deo000n8ghfpt" path="res://sprites/vaso/relleno_anim/90.png" id="2_jrakm"]
 [ext_resource type="Texture2D" uid="uid://cc5qhxoogw5w1" path="res://sprites/vaso/relleno_anim/91.png" id="3_1mrbc"]
-[ext_resource type="Texture2D" uid="uid://c2uosd5cqdp3b" path="res://sprites/vaso/relleno.png" id="3_fbhlr"]
+[ext_resource type="Texture2D" uid="uid://8ehuuk8axcbk" path="res://sprites/vaso/relleno_anim_blanco/01.png" id="3_y6rfy"]
+[ext_resource type="Texture2D" uid="uid://c77g5she6pqu3" path="res://sprites/vaso/relleno_anim_blanco/02.png" id="4_7b7h7"]
 [ext_resource type="Texture2D" uid="uid://6tb38hlro6rc" path="res://sprites/vaso/relleno_anim/107.png" id="4_cjxib"]
 [ext_resource type="Texture2D" uid="uid://bkne0gryabtl3" path="res://sprites/tubo1/sin_inclinar/01.png" id="4_hjyew"]
 [ext_resource type="Texture2D" uid="uid://3j2lnx6qpehl" path="res://sprites/tubo1/inclinado/02.png" id="5_6cc5p"]
+[ext_resource type="Texture2D" uid="uid://bvc4afv1l3y53" path="res://sprites/vaso/relleno_anim_blanco/11.png" id="5_58wd0"]
 [ext_resource type="Texture2D" uid="uid://c5xfjbisheyis" path="res://sprites/vaso/relleno_anim/108.png" id="5_oulkn"]
 [ext_resource type="Texture2D" uid="uid://dqt1mhafxs43g" path="res://sprites/tubo1/inclinado/03.png" id="6_bw4ew"]
 [ext_resource type="Texture2D" uid="uid://cpbol43g5klu5" path="res://sprites/vaso/relleno_anim/109.png" id="6_f248n"]
+[ext_resource type="Texture2D" uid="uid://c0tn56yka3ftc" path="res://sprites/vaso/relleno_anim_blanco/12.png" id="6_knvp5"]
 [ext_resource type="Texture2D" uid="uid://byimtbhhkxbe1" path="res://sprites/tubo1/inclinado/04.png" id="7_1wad7"]
+[ext_resource type="Texture2D" uid="uid://cy5l5h0mc5lim" path="res://sprites/vaso/relleno_anim_blanco/13.png" id="7_eecae"]
 [ext_resource type="Texture2D" uid="uid://cling5c5dpxg4" path="res://sprites/vaso/relleno_anim/92.png" id="7_fa32n"]
 [ext_resource type="Texture2D" uid="uid://cqu3yt7mioplm" path="res://sprites/tubo1/inclinado/05.png" id="8_cw6ly"]
 [ext_resource type="Texture2D" uid="uid://cm8gol41ptur8" path="res://sprites/vaso/relleno_anim/100.png" id="8_lupqi"]
+[ext_resource type="Texture2D" uid="uid://bck2er22dy48y" path="res://sprites/vaso/relleno_anim_blanco/03.png" id="8_s0po4"]
 [ext_resource type="Texture2D" uid="uid://mm7llapnavux" path="res://sprites/vaso/relleno_anim/101.png" id="9_opci3"]
 [ext_resource type="Texture2D" uid="uid://dar2ukcmw0aqj" path="res://sprites/tubo1/inclinado/06.png" id="9_pd7bo"]
+[ext_resource type="Texture2D" uid="uid://dh2i7sfll4oj2" path="res://sprites/vaso/relleno_anim_blanco/04.png" id="9_pl8ub"]
 [ext_resource type="Texture2D" uid="uid://d10dbgepvwbqk" path="res://sprites/vaso/relleno_anim/102.png" id="10_npyh0"]
+[ext_resource type="Texture2D" uid="uid://c1qi1hgcinr1n" path="res://sprites/vaso/relleno_anim_blanco/05.png" id="10_wd0wx"]
 [ext_resource type="Texture2D" uid="uid://byotkpqudyliv" path="res://sprites/vaso/relleno_anim/103.png" id="11_862sj"]
+[ext_resource type="Texture2D" uid="uid://8uqj8w45hm5x" path="res://sprites/vaso/relleno_anim_blanco/06.png" id="11_bk40f"]
 [ext_resource type="Texture2D" uid="uid://lasp6ffp3gdk" path="res://sprites/vaso/relleno_anim/104.png" id="12_uf6ev"]
+[ext_resource type="Texture2D" uid="uid://cxkvc2pkalc5q" path="res://sprites/vaso/relleno_anim_blanco/07.png" id="12_y5xmy"]
+[ext_resource type="Texture2D" uid="uid://dikjmbq47jchg" path="res://sprites/vaso/relleno_anim_blanco/08.png" id="13_3nut2"]
 [ext_resource type="Texture2D" uid="uid://3owy22t6o2ft" path="res://sprites/vaso/relleno_anim/105.png" id="13_nmobb"]
+[ext_resource type="Texture2D" uid="uid://dur6eoinrgqhw" path="res://sprites/vaso/relleno_anim_blanco/09.png" id="14_dcv7u"]
 [ext_resource type="Texture2D" uid="uid://dfbr4dbogp5ck" path="res://sprites/vaso/relleno_anim/106.png" id="14_klf2q"]
+[ext_resource type="Texture2D" uid="uid://b7mtxpc1a1k3q" path="res://sprites/vaso/relleno_anim_blanco/10.png" id="15_cmxyi"]
 [ext_resource type="Texture2D" uid="uid://btsfu1uxvmg14" path="res://sprites/vaso/vaso_sin_relleno.png" id="15_ko2ko"]
 [ext_resource type="Texture2D" uid="uid://ddlx1um8tj0mv" path="res://sprites/vaso/detalle_medida.png" id="16_yfr8w"]
 [ext_resource type="FontFile" uid="uid://c2abqlpcn1v0m" path="res://sprites/fuente_inconsolata/static/Inconsolata-Bold.ttf" id="22_728bm"]
 [ext_resource type="Texture2D" uid="uid://b3ekp4wsy6khh" path="res://sprites/ui/puntos.png" id="23_cohar"]
 [ext_resource type="Texture2D" uid="uid://bje1xm21wmo4" path="res://sprites/ui/check.png" id="24_45myp"]
+[ext_resource type="AudioStream" uid="uid://bilc1sjwv8x7b" path="res://audio/Agua 3.mp3" id="27_0wfnw"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_rglil"]
+frames = 13
+speed_scale = 15.0
+frame_0/texture = ExtResource("3_y6rfy")
+frame_1/texture = ExtResource("4_7b7h7")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("8_s0po4")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("9_pl8ub")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("10_wd0wx")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("11_bk40f")
+frame_5/duration = 1.0
+frame_6/texture = ExtResource("12_y5xmy")
+frame_6/duration = 1.0
+frame_7/texture = ExtResource("13_3nut2")
+frame_7/duration = 1.0
+frame_8/texture = ExtResource("14_dcv7u")
+frame_8/duration = 1.0
+frame_9/texture = ExtResource("15_cmxyi")
+frame_9/duration = 1.0
+frame_10/texture = ExtResource("5_58wd0")
+frame_10/duration = 1.0
+frame_11/texture = ExtResource("6_knvp5")
+frame_11/duration = 1.0
+frame_12/texture = ExtResource("7_eecae")
+frame_12/duration = 1.0
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_tx5qm"]
 frames = 13
@@ -147,7 +189,7 @@ offset_right = 449.0
 offset_bottom = 450.0
 allow_greater = true
 fill_mode = 3
-texture_progress = ExtResource("3_fbhlr")
+texture_progress = SubResource("AnimatedTexture_rglil")
 
 [node name="RellenoCoca" type="TextureProgressBar" parent="."]
 unique_name_in_owner = true
@@ -282,5 +324,10 @@ texture = ExtResource("24_45myp")
 visible = false
 position = Vector2(189, 31)
 texture = ExtResource("24_45myp")
+
+[node name="Agua" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("27_0wfnw")
+parameters/looping = true
 
 [connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
