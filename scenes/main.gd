@@ -21,7 +21,7 @@ func _process(delta: float) -> void:
 		_progress += randf_range(0.1,0.5)
 		print(vaso.value)
 	vaso.value = _progress
-	cantidad.text = str(vaso.value)
+	cantidad.text = str(vaso.value)+"%"
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("fill"):
