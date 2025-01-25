@@ -1,0 +1,160 @@
+[gd_scene load_steps=15 format=3 uid="uid://ctd00s6lqnqn2"]
+
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_lbwuo"]
+[ext_resource type="Texture2D" uid="uid://csptuhh2cpjrs" path="res://sprites/relleno.png" id="3_cvmd0"]
+[ext_resource type="Texture2D" uid="uid://dffskdkekblh3" path="res://sprites/__vaso__vacio.png" id="3_yfe7m"]
+[ext_resource type="Texture2D" uid="uid://dcyl7sgcr08u4" path="res://sprites/tubo_sin_inclinar.png" id="5_2upr6"]
+[ext_resource type="Texture2D" uid="uid://t1jef87rgaq7" path="res://sprites/tubo_inclinado_anim/2.png" id="6_wl4kg"]
+[ext_resource type="Texture2D" uid="uid://dn2bqkyktxa8o" path="res://sprites/tubo_inclinado_anim/3.png" id="7_kuicm"]
+[ext_resource type="Texture2D" uid="uid://cg73e6wsf2yf4" path="res://sprites/tubo_inclinado_anim/4.png" id="8_detc0"]
+[ext_resource type="Texture2D" uid="uid://bwdlf8jluodv5" path="res://sprites/tubo_inclinado_anim/5.png" id="9_sc1g7"]
+[ext_resource type="Texture2D" uid="uid://c1fp5kuopvn2k" path="res://sprites/tubo_inclinado_anim/6.png" id="10_mh3r7"]
+[ext_resource type="Texture2D" uid="uid://3n512cx0ewi2" path="res://sprites/tubo_inclinado_anim/7.png" id="11_hjfla"]
+
+[sub_resource type="Animation" id="Animation_j43x2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tubo:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_2upr6")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Tubo:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_myyda"]
+load_path = "res://.godot/imported/1.png-b61d52145166de00fb9f1af834e518e2.ctex"
+
+[sub_resource type="Animation" id="Animation_es3yc"]
+resource_name = "girar"
+length = 1.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tubo:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("5_2upr6"), SubResource("CompressedTexture2D_myyda"), ExtResource("6_wl4kg"), ExtResource("7_kuicm"), ExtResource("8_detc0"), ExtResource("9_sc1g7"), ExtResource("10_mh3r7"), ExtResource("11_hjfla")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Tubo:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -0.820305]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3fjl0"]
+_data = {
+"RESET": SubResource("Animation_j43x2"),
+"girar": SubResource("Animation_es3yc")
+}
+
+[node name="Main" type="Node2D"]
+position = Vector2(81, 8)
+script = ExtResource("1_lbwuo")
+
+[node name="Vaso" type="TextureProgressBar" parent="."]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 186.0
+offset_top = 241.0
+offset_right = 448.0
+offset_bottom = 507.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 50.0
+fill_mode = 3
+texture_progress = ExtResource("3_cvmd0")
+texture_progress_offset = Vector2(0, -5)
+
+[node name="SpriteVaso" type="Sprite2D" parent="."]
+position = Vector2(315, 335)
+texture = ExtResource("3_yfe7m")
+
+[node name="Tubo" type="Sprite2D" parent="."]
+position = Vector2(556, 171)
+texture = ExtResource("5_2upr6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Tubo"]
+unique_name_in_owner = true
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_3fjl0")
+}
+
+[node name="Perdiste" type="Label" parent="."]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 218.0
+offset_top = 144.0
+offset_right = 409.0
+offset_bottom = 211.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 48
+text = "Perdiste"
+
+[node name="Cantidad" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 71.0
+offset_top = 54.0
+offset_right = 128.0
+offset_bottom = 123.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "50"
+
+[node name="Restart" type="Button" parent="."]
+visible = false
+custom_minimum_size = Vector2(100, 25)
+offset_left = 46.0
+offset_top = 308.0
+offset_right = 146.0
+offset_bottom = 339.0
+text = "restart"
+
+[node name="Explicacion" type="Label" parent="."]
+offset_left = 164.0
+offset_top = 21.0
+offset_right = 505.0
+offset_bottom = 70.0
+text = "CLICK IZQUIERDO PARA LLENAR CON Fr Ne Th
+CLICK DERECHO PARA LLENAR CON Co Ca"
+
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]

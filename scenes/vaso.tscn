@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8mv30fuiuibs"]
+
+[ext_resource type="Shader" path="res://scenes/test3.gdshader" id="1_dlk8w"]
+[ext_resource type="Texture2D" uid="uid://tmp2np20xio7" path="res://sprites/content2.png" id="2_o6slr"]
+[ext_resource type="Texture2D" uid="uid://cv0obyf32fm2b" path="res://sprites/vaso2.png" id="3_xbint"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0du7g"]
+shader = ExtResource("1_dlk8w")
+shader_parameter/bg_color = Color(0, 0, 0, 1)
+shader_parameter/uv_scale = 2.8
+shader_parameter/percentage = 1.0
+shader_parameter/speed = 1.0
+shader_parameter/wave_1_speed = -1.0
+shader_parameter/wave_2_speed = 1.0
+shader_parameter/wave_1_freq = 1.2
+shader_parameter/wave_2_freq = 1.0
+shader_parameter/wave_1_amp = 0.015
+shader_parameter/wave_2_amp = 0.01
+shader_parameter/sun_dir = Vector3(-0.2, 0.4, 1)
+shader_parameter/water_colour = Color(0, 0, 0, 1)
+shader_parameter/foam_colour = Color(1, 1, 1, 1)
+shader_parameter/sky_colour = Color(0.033905, 0.204249, 0.286697, 1)
+shader_parameter/specular_colour = Color(1, 1, 1, 1)
+
+[node name="Vaso" type="Node2D"]
+
+[node name="Vaso" type="TextureProgressBar" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_0du7g")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 164.0
+offset_top = 220.0
+offset_right = 426.0
+offset_bottom = 486.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9, 0.9)
+value = 50.0
+fill_mode = 3
+texture_progress = ExtResource("2_o6slr")
+texture_progress_offset = Vector2(0, -5)
+
+[node name="SpriteVaso" type="Sprite2D" parent="."]
+position = Vector2(315, 335)
+texture = ExtResource("3_xbint")
