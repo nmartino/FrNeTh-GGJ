@@ -1,8 +1,9 @@
-[gd_scene load_steps=27 format=3 uid="uid://ctd00s6lqnqn2"]
+[gd_scene load_steps=31 format=3 uid="uid://ctd00s6lqnqn2"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_lbwuo"]
 [ext_resource type="Texture2D" uid="uid://deo000n8ghfpt" path="res://sprites/vaso/relleno_anim/90.png" id="2_jrakm"]
 [ext_resource type="Texture2D" uid="uid://cc5qhxoogw5w1" path="res://sprites/vaso/relleno_anim/91.png" id="3_1mrbc"]
+[ext_resource type="Texture2D" uid="uid://c2uosd5cqdp3b" path="res://sprites/vaso/relleno.png" id="3_fbhlr"]
 [ext_resource type="Texture2D" uid="uid://6tb38hlro6rc" path="res://sprites/vaso/relleno_anim/107.png" id="4_cjxib"]
 [ext_resource type="Texture2D" uid="uid://bkne0gryabtl3" path="res://sprites/tubo1/sin_inclinar/01.png" id="4_hjyew"]
 [ext_resource type="Texture2D" uid="uid://3j2lnx6qpehl" path="res://sprites/tubo1/inclinado/02.png" id="5_6cc5p"]
@@ -21,11 +22,14 @@
 [ext_resource type="Texture2D" uid="uid://3owy22t6o2ft" path="res://sprites/vaso/relleno_anim/105.png" id="13_nmobb"]
 [ext_resource type="Texture2D" uid="uid://dfbr4dbogp5ck" path="res://sprites/vaso/relleno_anim/106.png" id="14_klf2q"]
 [ext_resource type="Texture2D" uid="uid://btsfu1uxvmg14" path="res://sprites/vaso/vaso_sin_relleno.png" id="15_ko2ko"]
+[ext_resource type="Texture2D" uid="uid://ddlx1um8tj0mv" path="res://sprites/vaso/detalle_medida.png" id="16_yfr8w"]
 [ext_resource type="FontFile" uid="uid://c2abqlpcn1v0m" path="res://sprites/fuente_inconsolata/static/Inconsolata-Bold.ttf" id="22_728bm"]
+[ext_resource type="Texture2D" uid="uid://b3ekp4wsy6khh" path="res://sprites/ui/puntos.png" id="23_cohar"]
+[ext_resource type="Texture2D" uid="uid://bje1xm21wmo4" path="res://sprites/ui/check.png" id="24_45myp"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_tx5qm"]
 frames = 13
-speed_scale = 10.0
+speed_scale = 15.0
 frame_0/texture = ExtResource("2_jrakm")
 frame_1/texture = ExtResource("3_1mrbc")
 frame_1/duration = 1.0
@@ -117,7 +121,7 @@ _data = {
 position = Vector2(81, 8)
 script = ExtResource("1_lbwuo")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -128,13 +132,24 @@ offset_bottom = 471.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 4
+color = Color(0.817521, 0.817521, 0.817521, 1)
 metadata/_edit_lock_ = true
 
 [node name="SpriteVaso" type="Sprite2D" parent="."]
 position = Vector2(315, 335)
 texture = ExtResource("15_ko2ko")
 
-[node name="Vaso" type="TextureProgressBar" parent="."]
+[node name="RellenoFernet" type="TextureProgressBar" parent="."]
+visible = false
+offset_left = 213.0
+offset_top = 260.0
+offset_right = 449.0
+offset_bottom = 450.0
+allow_greater = true
+fill_mode = 3
+texture_progress = ExtResource("3_fbhlr")
+
+[node name="RellenoCoca" type="TextureProgressBar" parent="."]
 unique_name_in_owner = true
 anchors_preset = 8
 anchor_left = 0.5
@@ -147,10 +162,21 @@ offset_right = 474.0
 offset_bottom = 530.0
 grow_horizontal = 2
 grow_vertical = 2
-value = 50.0
 fill_mode = 3
 texture_progress = SubResource("AnimatedTexture_tx5qm")
 texture_progress_offset = Vector2(0, -5)
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 340.0
+offset_top = 313.0
+offset_right = 379.0
+offset_bottom = 407.0
+color = Color(0, 0, 0, 0.27451)
+
+[node name="RayasVaso" type="Sprite2D" parent="."]
+position = Vector2(360, 360)
+texture = ExtResource("16_yfr8w")
 
 [node name="Tubo" type="Sprite2D" parent="."]
 position = Vector2(538, 191)
@@ -182,7 +208,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 48
 text = "Perdiste"
 
-[node name="Cantidad" type="Label" parent="."]
+[node name="CantidadFrNeTh" type="Label" parent="."]
 unique_name_in_owner = true
 offset_left = 71.0
 offset_top = 54.0
@@ -191,7 +217,18 @@ offset_bottom = 123.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("22_728bm")
 theme_override_font_sizes/font_size = 50
-text = "50"
+text = "50%"
+
+[node name="CantidadCoCa" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 145.0
+offset_top = 125.0
+offset_right = 202.0
+offset_bottom = 194.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("22_728bm")
+theme_override_font_sizes/font_size = 50
+text = "50%"
 
 [node name="Restart" type="Button" parent="."]
 visible = false
@@ -203,11 +240,47 @@ offset_bottom = 339.0
 text = "restart"
 
 [node name="Explicacion" type="Label" parent="."]
+visible = false
 offset_left = 164.0
 offset_top = 21.0
 offset_right = 505.0
 offset_bottom = 70.0
 text = "CLICK IZQUIERDO PARA LLENAR CON Fr Ne Th
 CLICK DERECHO PARA LLENAR CON Co Ca"
+
+[node name="FrBack" type="ColorRect" parent="."]
+offset_left = -6.0
+offset_top = 53.0
+offset_right = 59.0
+offset_bottom = 112.0
+metadata/_edit_lock_ = true
+
+[node name="FrBack2" type="ColorRect" parent="."]
+offset_left = -5.0
+offset_top = 127.0
+offset_right = 60.0
+offset_bottom = 186.0
+metadata/_edit_lock_ = true
+
+[node name="FrBack3" type="ColorRect" parent="."]
+offset_left = 65.0
+offset_top = 125.0
+offset_right = 130.0
+offset_bottom = 184.0
+metadata/_edit_lock_ = true
+
+[node name="FrNeTh" type="Sprite2D" parent="."]
+position = Vector2(62, 120)
+texture = ExtResource("23_cohar")
+
+[node name="CheckFrNeTh" type="Sprite2D" parent="FrNeTh"]
+visible = false
+position = Vector2(119, -43)
+texture = ExtResource("24_45myp")
+
+[node name="CheckCoCa" type="Sprite2D" parent="FrNeTh"]
+visible = false
+position = Vector2(189, 31)
+texture = ExtResource("24_45myp")
 
 [connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
