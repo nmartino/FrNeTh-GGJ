@@ -1,9 +1,32 @@
-[gd_scene load_steps=7 format=3 uid="uid://d2ub7eki3nrt"]
+[gd_scene load_steps=32 format=3 uid="uid://d2ub7eki3nrt"]
 
 [ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_fg6ba"]
 [ext_resource type="Texture2D" uid="uid://cwadn6c7iaqkw" path="res://sprites/neo2/ui/puntos.png" id="1_j3ien"]
 [ext_resource type="FontFile" uid="uid://c2abqlpcn1v0m" path="res://sprites/fuente_inconsolata/static/Inconsolata-Bold.ttf" id="2_36s7n"]
 [ext_resource type="Texture2D" uid="uid://b6hl6tor770yr" path="res://sprites/neo2/ui/icons/x-square.svg" id="3_mi2js"]
+[ext_resource type="Texture2D" uid="uid://btsfu1uxvmg14" path="res://sprites/vaso/vaso_sin_relleno.png" id="5_anx4l"]
+[ext_resource type="Texture2D" uid="uid://deo000n8ghfpt" path="res://sprites/vaso/relleno_anim/90.png" id="6_ja65o"]
+[ext_resource type="Texture2D" uid="uid://cc5qhxoogw5w1" path="res://sprites/vaso/relleno_anim/91.png" id="7_wywvv"]
+[ext_resource type="Texture2D" uid="uid://6tb38hlro6rc" path="res://sprites/vaso/relleno_anim/107.png" id="8_rl135"]
+[ext_resource type="Texture2D" uid="uid://c5xfjbisheyis" path="res://sprites/vaso/relleno_anim/108.png" id="9_ugxp0"]
+[ext_resource type="Texture2D" uid="uid://cpbol43g5klu5" path="res://sprites/vaso/relleno_anim/109.png" id="10_ac3uk"]
+[ext_resource type="Texture2D" uid="uid://cling5c5dpxg4" path="res://sprites/vaso/relleno_anim/92.png" id="11_4l4km"]
+[ext_resource type="Texture2D" uid="uid://cm8gol41ptur8" path="res://sprites/vaso/relleno_anim/100.png" id="12_5uhxn"]
+[ext_resource type="Texture2D" uid="uid://mm7llapnavux" path="res://sprites/vaso/relleno_anim/101.png" id="13_16geb"]
+[ext_resource type="Texture2D" uid="uid://d10dbgepvwbqk" path="res://sprites/vaso/relleno_anim/102.png" id="14_e80eh"]
+[ext_resource type="Texture2D" uid="uid://byotkpqudyliv" path="res://sprites/vaso/relleno_anim/103.png" id="15_1wfwy"]
+[ext_resource type="Texture2D" uid="uid://lasp6ffp3gdk" path="res://sprites/vaso/relleno_anim/104.png" id="16_xgdqj"]
+[ext_resource type="Texture2D" uid="uid://3owy22t6o2ft" path="res://sprites/vaso/relleno_anim/105.png" id="17_41i5s"]
+[ext_resource type="Texture2D" uid="uid://dfbr4dbogp5ck" path="res://sprites/vaso/relleno_anim/106.png" id="18_bquxr"]
+[ext_resource type="Texture2D" uid="uid://bcdyfhrxu8vpy" path="res://sprites/neo2/victory/espumita/idle/1.png" id="19_1li1k"]
+[ext_resource type="Texture2D" uid="uid://ddlx1um8tj0mv" path="res://sprites/vaso/detalle_medida.png" id="19_jpxw1"]
+[ext_resource type="Texture2D" uid="uid://c0fycynygv5b1" path="res://sprites/neo2/victory/espumita/idle/2.png" id="20_8fiwf"]
+[ext_resource type="Texture2D" uid="uid://ds7fkaewbw81r" path="res://sprites/neo2/victory/espumita/idle/3.png" id="21_7mkme"]
+[ext_resource type="Texture2D" uid="uid://2el46t5udu35" path="res://sprites/neo2/victory/espumita/idle/4.png" id="22_xgn6b"]
+[ext_resource type="Texture2D" uid="uid://df5uqr08018mn" path="res://sprites/neo2/victory/espumita/idle/5.png" id="23_xqk58"]
+[ext_resource type="Texture2D" uid="uid://ci3eliuyjj8am" path="res://sprites/neo2/victory/espumita/idle/6.png" id="24_nhit2"]
+[ext_resource type="Texture2D" uid="uid://g1drjlm0iy6l" path="res://sprites/neo2/victory/espumita/idle/7.png" id="25_6rn46"]
+[ext_resource type="Texture2D" uid="uid://dk5rfxudepf6k" path="res://sprites/neo2/victory/espumita/idle/8.png" id="26_x3jky"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f08cb"]
 bg_color = Color(1, 1, 1, 1)
@@ -20,6 +43,67 @@ border_width_top = 8
 border_width_right = 8
 border_width_bottom = 8
 border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_qcn4j"]
+frames = 13
+speed_scale = 15.0
+frame_0/texture = ExtResource("6_ja65o")
+frame_1/texture = ExtResource("7_wywvv")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("11_4l4km")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("12_5uhxn")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("13_16geb")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("14_e80eh")
+frame_5/duration = 1.0
+frame_6/texture = ExtResource("15_1wfwy")
+frame_6/duration = 1.0
+frame_7/texture = ExtResource("16_xgdqj")
+frame_7/duration = 1.0
+frame_8/texture = ExtResource("17_41i5s")
+frame_8/duration = 1.0
+frame_9/texture = ExtResource("18_bquxr")
+frame_9/duration = 1.0
+frame_10/texture = ExtResource("8_rl135")
+frame_10/duration = 1.0
+frame_11/texture = ExtResource("9_ugxp0")
+frame_11/duration = 1.0
+frame_12/texture = ExtResource("10_ac3uk")
+frame_12/duration = 1.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1obcq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_1li1k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_8fiwf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_7mkme")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_xgn6b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_xqk58")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_nhit2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_6rn46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_x3jky")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [node name="Main Menu" type="Node2D"]
 script = ExtResource("1_fg6ba")
@@ -56,33 +140,64 @@ icon = ExtResource("3_mi2js")
 icon_alignment = 2
 
 [node name="TextureRect" type="Panel" parent="."]
+visible = false
 offset_left = 503.0
 offset_top = 87.0
 offset_right = 806.0
 offset_bottom = 354.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_i43dv")
 
-[node name="Label" type="Label" parent="TextureRect"]
-layout_mode = 1
+[node name="vaso" type="Sprite2D" parent="."]
+position = Vector2(652, 212)
+texture = ExtResource("5_anx4l")
+
+[node name="CocaBar" type="TextureProgressBar" parent="."]
+offset_left = 551.0
+offset_top = 136.0
+offset_right = 735.0
+offset_bottom = 293.0
+value = 100.0
+fill_mode = 3
+texture_progress = SubResource("AnimatedTexture_qcn4j")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(642, 98)
+sprite_frames = SubResource("SpriteFrames_1obcq")
+autoplay = "default"
+frame_progress = 0.953839
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 557.0
+offset_top = 150.0
+offset_right = 717.0
+offset_bottom = 282.0
+color = Color(0, 0, 0, 0.27451)
+
+[node name="Label" type="Label" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -131.5
-offset_top = -86.5
-offset_right = 180.5
-offset_bottom = 84.5
+offset_left = 559.0
+offset_top = 145.0
+offset_right = 740.0
+offset_bottom = 294.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_36s7n")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 16
 text = "Objetivo:
 70 Co-Ca
 30 Fr-Ne-Th
 
 Usa la Tecla A 
-para llenar El Vaso"
+para llenar 
+El Vaso"
+
+[node name="RayasVaso" type="Sprite2D" parent="."]
+position = Vector2(698, 231)
+texture = ExtResource("19_jpxw1")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
