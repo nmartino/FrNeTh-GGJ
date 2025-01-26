@@ -15,8 +15,13 @@ run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 boot_splash/bg_color=Color(1, 1, 1, 1)
 boot_splash/image="res://sprites/letters-light.png"
-config/icon="res://icon.svg"
+config/icon="res://01.png"
+config/windows_native_icon="res://01.png"
 boot_splash/minimum_display_time=3000
+
+[autoload]
+
+Musica="*res://scenes/audio.tscn"
 
 [display]
 

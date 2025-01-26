@@ -1,4 +1,4 @@
-[gd_scene load_steps=113 format=3 uid="uid://ctd00s6lqnqn2"]
+[gd_scene load_steps=136 format=3 uid="uid://ctd00s6lqnqn2"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_lbwuo"]
 [ext_resource type="Texture2D" uid="uid://deo000n8ghfpt" path="res://sprites/vaso/relleno_anim/90.png" id="2_jrakm"]
@@ -49,6 +49,7 @@
 [ext_resource type="Texture2D" uid="uid://cxkvc2pkalc5q" path="res://sprites/vaso/relleno_anim_blanco/07.png" id="12_y5xmy"]
 [ext_resource type="Texture2D" uid="uid://dikjmbq47jchg" path="res://sprites/vaso/relleno_anim_blanco/08.png" id="13_3nut2"]
 [ext_resource type="Texture2D" uid="uid://fohmkt8y6ni0" path="res://sprites/neo2/lost/espuma_radioactiva/1_.png" id="13_4ilvw"]
+[ext_resource type="Texture2D" uid="uid://dbjr0p1mowa7n" path="res://sprites/neo3/lost/ui_roto/vaso_roto.png" id="13_67wsj"]
 [ext_resource type="Texture2D" uid="uid://ds7fkaewbw81r" path="res://sprites/neo2/victory/espumita/idle/3.png" id="13_f8afm"]
 [ext_resource type="Texture2D" uid="uid://3owy22t6o2ft" path="res://sprites/vaso/relleno_anim/105.png" id="13_nmobb"]
 [ext_resource type="Texture2D" uid="uid://dur6eoinrgqhw" path="res://sprites/vaso/relleno_anim_blanco/09.png" id="14_dcv7u"]
@@ -83,7 +84,34 @@
 [ext_resource type="Texture2D" uid="uid://c1pddarf4xba2" path="res://sprites/neo2/tubo2/inclinado/05.png" id="60_kmftn"]
 [ext_resource type="Texture2D" uid="uid://cl0t4237hdbn7" path="res://sprites/neo2/tubo2/inclinado/06.png" id="61_oivqy"]
 [ext_resource type="Texture2D" uid="uid://cht8f0bg2nqck" path="res://sprites/neo2/tubo2/inclinado/07.png" id="62_hgb51"]
+[ext_resource type="Texture2D" uid="uid://d1tpw5ypufskw" path="res://sprites/neo3/tubo2/sin_inclinar/01z.png" id="69_w8jwa"]
 [ext_resource type="AudioStream" uid="uid://bqj4kj7t6k3tj" path="res://audio/win.mp3" id="71_g6meo"]
+[ext_resource type="Texture2D" uid="uid://ef1f56il424n" path="res://sprites/neo3/lost/ui_roto/tubo2_roto.png" id="77_lft27"]
+[ext_resource type="Texture2D" uid="uid://uclkajeoitl4" path="res://sprites/neo3/lost/ui_roto/tubo1_roto.png" id="78_1t6qu"]
+[ext_resource type="Texture2D" uid="uid://dcbhq02srs5cr" path="res://sprites/neo3/lost/ui_roto/warning/1.png" id="82_lls7p"]
+[ext_resource type="Texture2D" uid="uid://b7r0jrwg8ghqa" path="res://sprites/neo3/lost/ui_roto/warning/2.png" id="83_jsrow"]
+[ext_resource type="Texture2D" uid="uid://no0uturqj73s" path="res://sprites/neo3/lost/ui_roto/warning/3.png" id="84_yr3ie"]
+[ext_resource type="Texture2D" uid="uid://bag2mc5pecy04" path="res://sprites/neo3/lost/ui_roto/uix/1.png" id="85_if525"]
+[ext_resource type="Texture2D" uid="uid://cybrjeytun8ph" path="res://sprites/neo3/lost/ui_roto/uix/2.png" id="86_36wtn"]
+[ext_resource type="Texture2D" uid="uid://cfavl8myadnq3" path="res://sprites/neo3/lost/ui_roto/uix/3.png" id="87_ewqub"]
+[ext_resource type="Texture2D" uid="uid://de8rvrnp7ebyg" path="res://sprites/neo3/lost/ui_roto/uix/4.png" id="88_qqh2f"]
+[ext_resource type="Texture2D" uid="uid://d2wsyqev0t2ot" path="res://sprites/neo3/lost/ui_roto/fire/1.png" id="93_1xkry"]
+[ext_resource type="Texture2D" uid="uid://dgdd21gppwr86" path="res://sprites/neo3/lost/ui_roto/fire/2.png" id="94_3fbgu"]
+
+[sub_resource type="Animation" id="Animation_w5tbk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_mn5q0")]
+}
 
 [sub_resource type="Animation" id="Animation_ud53n"]
 resource_name = "japon"
@@ -102,7 +130,13 @@ tracks/0/keys = {
 "values": [ExtResource("2_mn5q0"), ExtResource("3_w8b3o"), ExtResource("2_mn5q0")]
 }
 
-[sub_resource type="Animation" id="Animation_w5tbk"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8fwm8"]
+_data = {
+"RESET": SubResource("Animation_w5tbk"),
+"japon": SubResource("Animation_ud53n")
+}
+
+[sub_resource type="Animation" id="Animation_7vw3a"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -114,13 +148,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_mn5q0")]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_8fwm8"]
-_data = {
-"RESET": SubResource("Animation_w5tbk"),
-"japon": SubResource("Animation_ud53n")
+"values": [ExtResource("4_o81rp")]
 }
 
 [sub_resource type="Animation" id="Animation_xeb3t"]
@@ -140,7 +168,14 @@ tracks/0/keys = {
 "values": [ExtResource("5_ngq8r"), ExtResource("4_o81rp"), ExtResource("6_r3yh1"), ExtResource("7_rvjb6"), ExtResource("8_gvryn"), ExtResource("9_g4ewl"), ExtResource("10_2xmm3"), ExtResource("11_6m7pb")]
 }
 
-[sub_resource type="Animation" id="Animation_7vw3a"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ct0m4"]
+_data = {
+"RESET": SubResource("Animation_7vw3a"),
+"nuke": SubResource("Animation_xeb3t")
+}
+
+[sub_resource type="Animation" id="Animation_b6ew8"]
+resource_name = "roto"
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -152,20 +187,39 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("4_o81rp")]
+"values": [ExtResource("13_67wsj")]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../RellenoFernet")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"hide"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("%RellenoCoca")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"hide"
+}]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ct0m4"]
-_data = {
-"RESET": SubResource("Animation_7vw3a"),
-"nuke": SubResource("Animation_xeb3t")
-}
-
-[sub_resource type="Animation" id="Animation_2khgr"]
-resource_name = "espuma"
-length = 0.6
-loop_mode = 1
-step = 0.05
+[sub_resource type="Animation" id="Animation_dokhw"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -173,10 +227,16 @@ tracks/0/path = NodePath(".:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.15, 0.3, 0.45, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("13_4ilvw"), ExtResource("14_o2mvd"), ExtResource("15_gxj7u"), ExtResource("16_bjqrk"), ExtResource("17_68y56")]
+"values": [ExtResource("15_ko2ko")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n8dns"]
+_data = {
+"RESET": SubResource("Animation_dokhw"),
+"roto": SubResource("Animation_b6ew8")
 }
 
 [sub_resource type="Animation" id="Animation_7qh10"]
@@ -194,10 +254,43 @@ tracks/0/keys = {
 "values": [null]
 }
 
+[sub_resource type="Animation" id="Animation_2khgr"]
+resource_name = "espuma"
+length = 0.4
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("13_4ilvw"), ExtResource("14_o2mvd"), ExtResource("15_gxj7u"), ExtResource("16_bjqrk"), ExtResource("17_68y56")]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dcqeh"]
 _data = {
 "RESET": SubResource("Animation_7qh10"),
 "espuma": SubResource("Animation_2khgr")
+}
+
+[sub_resource type="Animation" id="Animation_vxu5u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_8n2c7")]
 }
 
 [sub_resource type="Animation" id="Animation_oar7v"]
@@ -214,21 +307,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [ExtResource("5_8n2c7"), ExtResource("6_pbiru"), ExtResource("7_elj0f"), ExtResource("8_0o47w"), ExtResource("9_xj44l"), ExtResource("10_inaej")]
-}
-
-[sub_resource type="Animation" id="Animation_vxu5u"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("5_8n2c7")]
 }
 
 [sub_resource type="Animation" id="Animation_2naye"]
@@ -255,6 +333,21 @@ _data = {
 "ganar2": SubResource("Animation_2naye")
 }
 
+[sub_resource type="Animation" id="Animation_8xs2n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_etj17")]
+}
+
 [sub_resource type="Animation" id="Animation_h35bp"]
 resource_name = "brillo"
 length = 0.7
@@ -270,21 +363,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [ExtResource("4_etj17"), ExtResource("20_vubrp"), ExtResource("21_cbb0a"), ExtResource("22_o60uw")]
-}
-
-[sub_resource type="Animation" id="Animation_8xs2n"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("4_etj17")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_eka44"]
@@ -420,7 +498,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("56_jg608"), ExtResource("57_k03x3"), ExtResource("58_v410d"), ExtResource("59_l41py"), ExtResource("60_kmftn"), ExtResource("61_oivqy"), ExtResource("62_hgb51")]
+"values": [ExtResource("69_w8jwa"), ExtResource("57_k03x3"), ExtResource("58_v410d"), ExtResource("59_l41py"), ExtResource("60_kmftn"), ExtResource("61_oivqy"), ExtResource("62_hgb51")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -464,11 +542,47 @@ tracks/1/keys = {
 "values": [0.0]
 }
 
+[sub_resource type="Animation" id="Animation_wjjyk"]
+resource_name = "tubo2roto"
+length = 0.001
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tubo:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("77_lft27")]
+}
+
+[sub_resource type="Animation" id="Animation_hnumq"]
+resource_name = "tubo1roto"
+length = 0.001
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tubo:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("78_1t6qu")]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3fjl0"]
 _data = {
 "RESET": SubResource("Animation_j43x2"),
 "girar": SubResource("Animation_es3yc"),
+"tubo1roto": SubResource("Animation_hnumq"),
 "tubo2": SubResource("Animation_p7moy"),
+"tubo2roto": SubResource("Animation_wjjyk"),
 "tubo_idle": SubResource("Animation_ojwjq")
 }
 
@@ -479,6 +593,114 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b3sca"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("82_lls7p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_jsrow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_yr3ie")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_sgwqc"]
+resource_name = "roto"
+length = 0.400003
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.266667, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("85_if525"), ExtResource("86_36wtn"), ExtResource("87_ewqub"), ExtResource("88_qqh2f")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(40, 134)]
+}
+
+[sub_resource type="Animation" id="Animation_suepq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("37_dhttk")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(51, 101)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ry87t"]
+_data = {
+"RESET": SubResource("Animation_suepq"),
+"roto": SubResource("Animation_sgwqc")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gko0f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("93_1xkry")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_3fbgu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="Animation" id="Animation_5ixkk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bombaRec:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_bx1tj"]
 resource_name = "explosion"
@@ -522,20 +744,19 @@ tracks/2/keys = {
 "method": &"show_nuke"
 }]
 }
-
-[sub_resource type="Animation" id="Animation_5ixkk"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("bombaRec:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [{
+"args": [],
+"method": &"mostrarRoto"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_2v2a8"]
@@ -603,6 +824,11 @@ libraries = {
 [node name="SpriteVaso" type="Sprite2D" parent="."]
 position = Vector2(315, 335)
 texture = ExtResource("15_ko2ko")
+
+[node name="AnimationVaso" type="AnimationPlayer" parent="SpriteVaso"]
+libraries = {
+"": SubResource("AnimationLibrary_n8dns")
+}
 
 [node name="SpriteEspumaPerdio" type="Sprite2D" parent="."]
 visible = false
@@ -751,6 +977,13 @@ offset_bottom = 70.0
 text = "CLICK IZQUIERDO PARA LLENAR CON Fr Ne Th
 CLICK DERECHO PARA LLENAR CON Co Ca"
 
+[node name="alarma" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(678, 55)
+sprite_frames = SubResource("SpriteFrames_b3sca")
+autoplay = "default"
+frame_progress = 0.0492144
+
 [node name="FrNeTh" type="Sprite2D" parent="."]
 position = Vector2(51, 101)
 texture = ExtResource("37_dhttk")
@@ -778,6 +1011,39 @@ visible = false
 position = Vector2(134, -23)
 texture = ExtResource("39_613hd")
 metadata/_edit_lock_ = true
+
+[node name="FrNeThRoto" type="AnimationPlayer" parent="FrNeTh"]
+libraries = {
+"": SubResource("AnimationLibrary_ry87t")
+}
+
+[node name="Fuego" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(206, 279)
+sprite_frames = SubResource("SpriteFrames_gko0f")
+autoplay = "default"
+frame_progress = 0.869743
+
+[node name="Fuego2" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(306, 251)
+sprite_frames = SubResource("SpriteFrames_gko0f")
+autoplay = "default"
+frame_progress = 0.495741
+
+[node name="Fuego3" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(379, 274)
+sprite_frames = SubResource("SpriteFrames_gko0f")
+autoplay = "default"
+frame_progress = 0.863701
+
+[node name="Fuego4" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(9, 31)
+sprite_frames = SubResource("SpriteFrames_gko0f")
+autoplay = "default"
+frame_progress = 0.607565
 
 [node name="Agua" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true

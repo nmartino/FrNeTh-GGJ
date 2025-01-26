@@ -28,6 +28,13 @@ extends Node2D
 @onready var sprite_espuma_perdio: Sprite2D = $SpriteEspumaPerdio
 @onready var animation_nuke: AnimationPlayer = $nuke/AnimationNuke
 @onready var animation_espuma_perdio: AnimationPlayer = $SpriteEspumaPerdio/AnimationEspumaPerdio
+@onready var fuego: AnimatedSprite2D = $Fuego
+@onready var fuego_2: AnimatedSprite2D = $Fuego2
+@onready var fuego_3: AnimatedSprite2D = $Fuego3
+@onready var fuego_4: AnimatedSprite2D = $Fuego4
+@onready var fr_ne_th_roto: AnimationPlayer = $FrNeTh/FrNeThRoto
+@onready var animation_vaso: AnimationPlayer = $SpriteVaso/AnimationVaso
+@onready var alarma_animacion: AnimatedSprite2D = $alarma
 
 var randomFuerza : float = 30.0
 var shakeFade : float = 5.0
@@ -62,11 +69,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("fill") and animacion_finalizada and bebida and not ganaste and not perdiste:
 		_progress += randf_range(0.1,0.5)
-		print(_progress)
 		vaso.value = _progress
 	elif Input.is_action_pressed("fill") and animacion_finalizada and not bebida and not ganaste and not perdiste:
 		_progress_fernet += randf_range(0.1,0.5)
-		print(_progress_fernet)
 		relleno_fernet.value = _progress_fernet
 	
 	cantidad_coca.text = str(vaso.value)+"%"
@@ -95,9 +100,11 @@ func _input(event: InputEvent) -> void:
 			perdiste = true
 			cruz_co_ca.show()
 			alarma.play()
+			alarma_animacion.show()
 			apply_shake()
 			show_espuma_perdio()
-			alarma.finished.connect(bombaAni	)
+			
+			alarma.finished.connect(bombaAni)
 			#perdiste.show()
 		if vaso.value == max_coca:
 			#perdiste.text = "GANASTE"
@@ -109,6 +116,7 @@ func _input(event: InputEvent) -> void:
 			perdiste = true
 			cruz_fr_ne_th.show()
 			alarma.play()
+			alarma_animacion.show()
 			apply_shake()
 			show_espuma_perdio()
 			alarma.finished.connect(bombaAni	)
@@ -178,4 +186,19 @@ func nukePerdio(animacion: String)->void:
 	if animacion=="nuke":
 		nuke.hide()
 		sprite_espuma_perdio.hide()
+
+func mostrarRoto()->void:
+	if bebida:
+		animation_player.play("tubo1roto")
+	else:
+		animation_player.play("tubo2roto")
+	fr_ne_th_roto.play("roto")
+	animation_vaso.play("roto")
+	fuego.show()
+	fuego_2.show()
+	fuego_3.show()
+	fuego_4.show()
+	
+	
+	
 	

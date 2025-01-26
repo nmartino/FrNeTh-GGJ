@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ubhpicovy87x"
+path="res://.godot/imported/El Fernezaso 2.mp3-7a395728b59ed1a1df8103edd4ac5a8d.mp3str"
+
+[deps]
+
+source_file="res://audio/El Fernezaso 2.mp3"
+dest_files=["res://.godot/imported/El Fernezaso 2.mp3-7a395728b59ed1a1df8103edd4ac5a8d.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0
+beat_count=0
+bar_beats=4

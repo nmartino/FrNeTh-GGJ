@@ -3,7 +3,8 @@
 [ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_fg6ba"]
 [ext_resource type="Texture2D" uid="uid://cwadn6c7iaqkw" path="res://sprites/neo2/ui/puntos.png" id="1_j3ien"]
 [ext_resource type="FontFile" uid="uid://c2abqlpcn1v0m" path="res://sprites/fuente_inconsolata/static/Inconsolata-Bold.ttf" id="2_36s7n"]
-[ext_resource type="Texture2D" uid="uid://b6hl6tor770yr" path="res://sprites/neo2/ui/icons/x-square.svg" id="3_mi2js"]
+[ext_resource type="Texture2D" uid="uid://baq1hecb60r0m" path="res://sprites/neo3/ui/icons/play.png" id="3_8vkep"]
+[ext_resource type="Texture2D" uid="uid://lpbcsu1t4683" path="res://sprites/neo3/ui/icons/playpressed.png" id="4_207ii"]
 [ext_resource type="Texture2D" uid="uid://btsfu1uxvmg14" path="res://sprites/vaso/vaso_sin_relleno.png" id="5_anx4l"]
 [ext_resource type="Texture2D" uid="uid://deo000n8ghfpt" path="res://sprites/vaso/relleno_anim/90.png" id="6_ja65o"]
 [ext_resource type="Texture2D" uid="uid://cc5qhxoogw5w1" path="res://sprites/vaso/relleno_anim/91.png" id="7_wywvv"]
@@ -27,14 +28,6 @@
 [ext_resource type="Texture2D" uid="uid://ci3eliuyjj8am" path="res://sprites/neo2/victory/espumita/idle/6.png" id="24_nhit2"]
 [ext_resource type="Texture2D" uid="uid://g1drjlm0iy6l" path="res://sprites/neo2/victory/espumita/idle/7.png" id="25_6rn46"]
 [ext_resource type="Texture2D" uid="uid://dk5rfxudepf6k" path="res://sprites/neo2/victory/espumita/idle/8.png" id="26_x3jky"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f08cb"]
-bg_color = Color(1, 1, 1, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i43dv"]
 bg_color = Color(0.93845, 0.93845, 0.93845, 1)
@@ -118,26 +111,21 @@ position = Vector2(246, 222)
 scale = Vector2(2, 2)
 texture = ExtResource("1_j3ien")
 
-[node name="Button" type="Button" parent="."]
-custom_minimum_size = Vector2(100, 30)
+[node name="Button" type="TextureButton" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 338.0
-offset_top = 175.0
-offset_right = 438.0
-offset_bottom = 207.0
+offset_top = 155.0
+offset_right = 398.0
+offset_bottom = 227.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_36s7n")
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_f08cb")
-text = "Play"
-icon = ExtResource("3_mi2js")
-icon_alignment = 2
+texture_normal = ExtResource("3_8vkep")
+texture_pressed = ExtResource("4_207ii")
+texture_hover = ExtResource("4_207ii")
 
 [node name="TextureRect" type="Panel" parent="."]
 visible = false
@@ -164,7 +152,7 @@ texture_progress = SubResource("AnimatedTexture_qcn4j")
 position = Vector2(642, 98)
 sprite_frames = SubResource("SpriteFrames_1obcq")
 autoplay = "default"
-frame_progress = 0.953839
+frame_progress = 0.168858
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 offset_left = 557.0
@@ -199,5 +187,15 @@ El Vaso"
 [node name="RayasVaso" type="Sprite2D" parent="."]
 position = Vector2(698, 231)
 texture = ExtResource("19_jpxw1")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 269.0
+offset_top = 457.0
+offset_right = 849.0
+offset_bottom = 480.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_36s7n")
+theme_override_font_sizes/font_size = 20
+text = "Programacion: Nico M. - Arte: Lucas Z. - Musica: Ashley H."
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
