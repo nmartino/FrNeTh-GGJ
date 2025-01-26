@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=3 uid="uid://ctd00s6lqnqn2"]
+[gd_scene load_steps=113 format=3 uid="uid://ctd00s6lqnqn2"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_lbwuo"]
 [ext_resource type="Texture2D" uid="uid://deo000n8ghfpt" path="res://sprites/vaso/relleno_anim/90.png" id="2_jrakm"]
@@ -10,29 +10,37 @@
 [ext_resource type="Texture2D" uid="uid://6tb38hlro6rc" path="res://sprites/vaso/relleno_anim/107.png" id="4_cjxib"]
 [ext_resource type="Texture2D" uid="uid://dq8by4et5hngv" path="res://sprites/neo2/victory/shine/1.png" id="4_etj17"]
 [ext_resource type="Texture2D" uid="uid://bkne0gryabtl3" path="res://sprites/tubo1/sin_inclinar/01.png" id="4_hjyew"]
+[ext_resource type="Texture2D" uid="uid://dmtbsiic6qff8" path="res://sprites/neo2/lost/nuke/6.png" id="4_o81rp"]
 [ext_resource type="Texture2D" uid="uid://3j2lnx6qpehl" path="res://sprites/tubo1/inclinado/02.png" id="5_6cc5p"]
 [ext_resource type="Texture2D" uid="uid://dpdihtawv48cs" path="res://sprites/neo2/victory/espumita/transition/1.png" id="5_8n2c7"]
 [ext_resource type="Texture2D" uid="uid://bvc4afv1l3y53" path="res://sprites/vaso/relleno_anim_blanco/11.png" id="5_58wd0"]
+[ext_resource type="Texture2D" uid="uid://uw4misbfyo1l" path="res://sprites/neo2/lost/nuke/5.png" id="5_ngq8r"]
 [ext_resource type="Texture2D" uid="uid://c5xfjbisheyis" path="res://sprites/vaso/relleno_anim/108.png" id="5_oulkn"]
 [ext_resource type="Texture2D" uid="uid://dqt1mhafxs43g" path="res://sprites/tubo1/inclinado/03.png" id="6_bw4ew"]
 [ext_resource type="Texture2D" uid="uid://cpbol43g5klu5" path="res://sprites/vaso/relleno_anim/109.png" id="6_f248n"]
 [ext_resource type="Texture2D" uid="uid://c0tn56yka3ftc" path="res://sprites/vaso/relleno_anim_blanco/12.png" id="6_knvp5"]
 [ext_resource type="Texture2D" uid="uid://cx76au6smvrds" path="res://sprites/neo2/victory/espumita/transition/2.png" id="6_pbiru"]
+[ext_resource type="Texture2D" uid="uid://b2uqqkbd3kv5h" path="res://sprites/neo2/lost/nuke/7.png" id="6_r3yh1"]
 [ext_resource type="Texture2D" uid="uid://byimtbhhkxbe1" path="res://sprites/tubo1/inclinado/04.png" id="7_1wad7"]
 [ext_resource type="Texture2D" uid="uid://cy5l5h0mc5lim" path="res://sprites/vaso/relleno_anim_blanco/13.png" id="7_eecae"]
 [ext_resource type="Texture2D" uid="uid://bfm3x7qt3bkai" path="res://sprites/neo2/victory/espumita/transition/3.png" id="7_elj0f"]
 [ext_resource type="Texture2D" uid="uid://cling5c5dpxg4" path="res://sprites/vaso/relleno_anim/92.png" id="7_fa32n"]
+[ext_resource type="Texture2D" uid="uid://ba2s2jkrqdcj1" path="res://sprites/neo2/lost/nuke/8.png" id="7_rvjb6"]
 [ext_resource type="Texture2D" uid="uid://dsa37ydtkyxi6" path="res://sprites/neo2/victory/espumita/transition/4.png" id="8_0o47w"]
 [ext_resource type="Texture2D" uid="uid://cqu3yt7mioplm" path="res://sprites/tubo1/inclinado/05.png" id="8_cw6ly"]
+[ext_resource type="Texture2D" uid="uid://cr8nvy2emlfjf" path="res://sprites/neo2/lost/nuke/9.png" id="8_gvryn"]
 [ext_resource type="Texture2D" uid="uid://cm8gol41ptur8" path="res://sprites/vaso/relleno_anim/100.png" id="8_lupqi"]
 [ext_resource type="Texture2D" uid="uid://bck2er22dy48y" path="res://sprites/vaso/relleno_anim_blanco/03.png" id="8_s0po4"]
+[ext_resource type="Texture2D" uid="uid://bguu8qfq4jksg" path="res://sprites/neo2/lost/nuke/10.png" id="9_g4ewl"]
 [ext_resource type="Texture2D" uid="uid://mm7llapnavux" path="res://sprites/vaso/relleno_anim/101.png" id="9_opci3"]
 [ext_resource type="Texture2D" uid="uid://dar2ukcmw0aqj" path="res://sprites/tubo1/inclinado/06.png" id="9_pd7bo"]
 [ext_resource type="Texture2D" uid="uid://dh2i7sfll4oj2" path="res://sprites/vaso/relleno_anim_blanco/04.png" id="9_pl8ub"]
 [ext_resource type="Texture2D" uid="uid://cpnvawiraocn7" path="res://sprites/neo2/victory/espumita/transition/5.png" id="9_xj44l"]
+[ext_resource type="Texture2D" uid="uid://3o5fr6q1vqwx" path="res://sprites/neo2/lost/nuke/11.png" id="10_2xmm3"]
 [ext_resource type="Texture2D" uid="uid://d0cmohh51ndm" path="res://sprites/neo2/victory/espumita/transition/6.png" id="10_inaej"]
 [ext_resource type="Texture2D" uid="uid://d10dbgepvwbqk" path="res://sprites/vaso/relleno_anim/102.png" id="10_npyh0"]
 [ext_resource type="Texture2D" uid="uid://c1qi1hgcinr1n" path="res://sprites/vaso/relleno_anim_blanco/05.png" id="10_wd0wx"]
+[ext_resource type="Texture2D" uid="uid://bjbu7p0o7jsv6" path="res://sprites/neo2/lost/nuke/12.png" id="11_6m7pb"]
 [ext_resource type="Texture2D" uid="uid://byotkpqudyliv" path="res://sprites/vaso/relleno_anim/103.png" id="11_862sj"]
 [ext_resource type="Texture2D" uid="uid://8uqj8w45hm5x" path="res://sprites/vaso/relleno_anim_blanco/06.png" id="11_bk40f"]
 [ext_resource type="Texture2D" uid="uid://bcdyfhrxu8vpy" path="res://sprites/neo2/victory/espumita/idle/1.png" id="11_jvxqp"]
@@ -40,16 +48,21 @@
 [ext_resource type="Texture2D" uid="uid://c0fycynygv5b1" path="res://sprites/neo2/victory/espumita/idle/2.png" id="12_xvv1x"]
 [ext_resource type="Texture2D" uid="uid://cxkvc2pkalc5q" path="res://sprites/vaso/relleno_anim_blanco/07.png" id="12_y5xmy"]
 [ext_resource type="Texture2D" uid="uid://dikjmbq47jchg" path="res://sprites/vaso/relleno_anim_blanco/08.png" id="13_3nut2"]
+[ext_resource type="Texture2D" uid="uid://fohmkt8y6ni0" path="res://sprites/neo2/lost/espuma_radioactiva/1_.png" id="13_4ilvw"]
 [ext_resource type="Texture2D" uid="uid://ds7fkaewbw81r" path="res://sprites/neo2/victory/espumita/idle/3.png" id="13_f8afm"]
 [ext_resource type="Texture2D" uid="uid://3owy22t6o2ft" path="res://sprites/vaso/relleno_anim/105.png" id="13_nmobb"]
 [ext_resource type="Texture2D" uid="uid://dur6eoinrgqhw" path="res://sprites/vaso/relleno_anim_blanco/09.png" id="14_dcv7u"]
 [ext_resource type="Texture2D" uid="uid://dfbr4dbogp5ck" path="res://sprites/vaso/relleno_anim/106.png" id="14_klf2q"]
+[ext_resource type="Texture2D" uid="uid://cmsbegsle2asi" path="res://sprites/neo2/lost/espuma_radioactiva/2_.png" id="14_o2mvd"]
 [ext_resource type="Texture2D" uid="uid://2el46t5udu35" path="res://sprites/neo2/victory/espumita/idle/4.png" id="14_p8qn4"]
 [ext_resource type="Texture2D" uid="uid://b7mtxpc1a1k3q" path="res://sprites/vaso/relleno_anim_blanco/10.png" id="15_cmxyi"]
+[ext_resource type="Texture2D" uid="uid://brnjry61yhgf4" path="res://sprites/neo2/lost/espuma_radioactiva/3_.png" id="15_gxj7u"]
 [ext_resource type="Texture2D" uid="uid://btsfu1uxvmg14" path="res://sprites/vaso/vaso_sin_relleno.png" id="15_ko2ko"]
 [ext_resource type="Texture2D" uid="uid://df5uqr08018mn" path="res://sprites/neo2/victory/espumita/idle/5.png" id="15_y03m7"]
+[ext_resource type="Texture2D" uid="uid://b24cf5lfwhys4" path="res://sprites/neo2/lost/espuma_radioactiva/4_.png" id="16_bjqrk"]
 [ext_resource type="Texture2D" uid="uid://ci3eliuyjj8am" path="res://sprites/neo2/victory/espumita/idle/6.png" id="16_w0pup"]
 [ext_resource type="Texture2D" uid="uid://ddlx1um8tj0mv" path="res://sprites/vaso/detalle_medida.png" id="16_yfr8w"]
+[ext_resource type="Texture2D" uid="uid://b1w6ys1ygatxo" path="res://sprites/neo2/lost/espuma_radioactiva/5_.png" id="17_68y56"]
 [ext_resource type="Texture2D" uid="uid://g1drjlm0iy6l" path="res://sprites/neo2/victory/espumita/idle/7.png" id="17_b4okd"]
 [ext_resource type="Texture2D" uid="uid://dk5rfxudepf6k" path="res://sprites/neo2/victory/espumita/idle/8.png" id="18_1cmb7"]
 [ext_resource type="Texture2D" uid="uid://cjve1ixoioch4" path="res://sprites/neo2/victory/shine/2.png" id="20_vubrp"]
@@ -108,6 +121,83 @@ tracks/0/keys = {
 _data = {
 "RESET": SubResource("Animation_w5tbk"),
 "japon": SubResource("Animation_ud53n")
+}
+
+[sub_resource type="Animation" id="Animation_xeb3t"]
+resource_name = "nuke"
+length = 0.7
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("5_ngq8r"), ExtResource("4_o81rp"), ExtResource("6_r3yh1"), ExtResource("7_rvjb6"), ExtResource("8_gvryn"), ExtResource("9_g4ewl"), ExtResource("10_2xmm3"), ExtResource("11_6m7pb")]
+}
+
+[sub_resource type="Animation" id="Animation_7vw3a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_o81rp")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ct0m4"]
+_data = {
+"RESET": SubResource("Animation_7vw3a"),
+"nuke": SubResource("Animation_xeb3t")
+}
+
+[sub_resource type="Animation" id="Animation_2khgr"]
+resource_name = "espuma"
+length = 0.6
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("13_4ilvw"), ExtResource("14_o2mvd"), ExtResource("15_gxj7u"), ExtResource("16_bjqrk"), ExtResource("17_68y56")]
+}
+
+[sub_resource type="Animation" id="Animation_7qh10"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dcqeh"]
+_data = {
+"RESET": SubResource("Animation_7qh10"),
+"espuma": SubResource("Animation_2khgr")
 }
 
 [sub_resource type="Animation" id="Animation_oar7v"]
@@ -418,6 +508,20 @@ tracks/1/keys = {
 "method": &"apply_shake"
 }]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"show_nuke"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_5ixkk"]
 length = 0.001
@@ -486,9 +590,28 @@ libraries = {
 "": SubResource("AnimationLibrary_8fwm8")
 }
 
+[node name="nuke" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(300, 213)
+texture = ExtResource("4_o81rp")
+
+[node name="AnimationNuke" type="AnimationPlayer" parent="nuke"]
+libraries = {
+"": SubResource("AnimationLibrary_ct0m4")
+}
+
 [node name="SpriteVaso" type="Sprite2D" parent="."]
 position = Vector2(315, 335)
 texture = ExtResource("15_ko2ko")
+
+[node name="SpriteEspumaPerdio" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(307, 235)
+
+[node name="AnimationEspumaPerdio" type="AnimationPlayer" parent="SpriteEspumaPerdio"]
+libraries = {
+"": SubResource("AnimationLibrary_dcqeh")
+}
 
 [node name="SpriteEspuma" type="Sprite2D" parent="."]
 visible = false

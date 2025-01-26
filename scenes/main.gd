@@ -24,6 +24,10 @@ extends Node2D
 @onready var sprite_espuma: Sprite2D = $SpriteEspuma
 @onready var brillos_vaso: Sprite2D = $BrillosVaso
 @onready var win: AudioStreamPlayer = %win
+@onready var nuke: Sprite2D = $nuke
+@onready var sprite_espuma_perdio: Sprite2D = $SpriteEspumaPerdio
+@onready var animation_nuke: AnimationPlayer = $nuke/AnimationNuke
+@onready var animation_espuma_perdio: AnimationPlayer = $SpriteEspumaPerdio/AnimationEspumaPerdio
 
 var randomFuerza : float = 30.0
 var shakeFade : float = 5.0
@@ -47,6 +51,7 @@ var bebida : bool = true
 func _ready() -> void:
 	animation_player.animation_finished.connect(animacion)
 	animacion_ganar.animation_finished.connect(ganar_ani)
+	animation_nuke.animation_finished.connect(nukePerdio)
 	cantidad_fernet.text = str(0)+"%"
 	cantidad_coca.text = str(0)+"%"
 	relleno_fernet.value = 70.
@@ -91,6 +96,7 @@ func _input(event: InputEvent) -> void:
 			cruz_co_ca.show()
 			alarma.play()
 			apply_shake()
+			show_espuma_perdio()
 			alarma.finished.connect(bombaAni	)
 			#perdiste.show()
 		if vaso.value == max_coca:
@@ -103,6 +109,8 @@ func _input(event: InputEvent) -> void:
 			perdiste = true
 			cruz_fr_ne_th.show()
 			alarma.play()
+			apply_shake()
+			show_espuma_perdio()
 			alarma.finished.connect(bombaAni	)
 			#perdiste.show()
 			
@@ -157,4 +165,17 @@ func ganar_ani(animacion: String)-> void:
 		animacion_brillo_vaso.play("brillo")
 		await get_tree().create_timer(2).timeout
 		restart.show()
+
+func show_nuke()->void:
+	nuke.show()
+	animation_nuke.play("nuke")
+
+func show_espuma_perdio()-> void:
+	sprite_espuma_perdio.show()
+	animation_espuma_perdio.play("espuma")
+
+func nukePerdio(animacion: String)->void:
+	if animacion=="nuke":
+		nuke.hide()
+		sprite_espuma_perdio.hide()
 	
