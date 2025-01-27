@@ -1,7 +1,6 @@
 extends Node2D
 @onready var vaso: TextureProgressBar = %RellenoCoca
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
-#@onready var perdiste: Label = %Perdiste
 @onready var cantidad_fernet: Label = %CantidadFrNeTh
 @onready var cantidad_coca: Label = %CantidadCoCa
 @onready var restart: Button = $Restart
@@ -37,7 +36,7 @@ extends Node2D
 @onready var alarma_animacion: AnimatedSprite2D = $alarma
 
 var randomFuerza : float = 30.0
-var shakeFade : float = 5.0
+var shakeFade : float = 50
 
 var rng = RandomNumberGenerator.new()
 
@@ -68,17 +67,18 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("fill") and animacion_finalizada and bebida and not ganaste and not perdiste:
-		_progress += randf_range(0.1,0.5)
+		_progress += randf_range(50,100)*delta
 		vaso.value = _progress
 	elif Input.is_action_pressed("fill") and animacion_finalizada and not bebida and not ganaste and not perdiste:
-		_progress_fernet += randf_range(0.1,0.5)
+		_progress_fernet += randf_range(50,100)*delta
 		relleno_fernet.value = _progress_fernet
 	
 	cantidad_coca.text = str(vaso.value)+"%"
 	cantidad_fernet.text = str(relleno_fernet.value-70.)+"%"
 	
 	if shake_str > 0:
-		shake_str = lerpf(shake_str,0,shakeFade*delta)
+		#shake_str = lerpf(shake_str,0,shakeFade*delta)
+		shake_str = move_toward(shake_str, 0, shakeFade * delta)
 		camara.offset = random_offset()
 
 func _input(event: InputEvent) -> void:
