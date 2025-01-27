@@ -44,37 +44,38 @@ var shake_str: float = 0.0
 var ganaste : bool = false
 var perdiste: bool = false
 
-const max_coca:float = 70
+const max_coca:float = 100
 const max_ferne:float = 30
 
 
-var _progress :float = 0.
-var _progress_fernet :float = 70.
+var _progress :float = 30.
+var _progress_fernet :float = 0.
 var animacion_finalizada :bool = false
 #true es coca false es ferne
-var bebida : bool = true
+var bebida : bool = false
 
 func _ready() -> void:
 	animation_player.animation_finished.connect(animacion)
 	animacion_ganar.animation_finished.connect(ganar_ani)
 	animation_nuke.animation_finished.connect(nukePerdio)
+	animation_player.play("RESET")
 	cantidad_fernet.text = str(0)+"%"
 	cantidad_coca.text = str(0)+"%"
-	relleno_fernet.value = 70.
+	vaso.value = 30.
 	background_japon.hide()
 	sprite_espuma.hide()
 	brillos_vaso.hide()
 
 func _process(delta: float) -> void:
-	if Input.is_action_pressed("fill") and animacion_finalizada and bebida and not ganaste and not perdiste:
-		_progress += randf_range(50,100)*delta
-		vaso.value = _progress
-	elif Input.is_action_pressed("fill") and animacion_finalizada and not bebida and not ganaste and not perdiste:
+	if Input.is_action_pressed("fill") and animacion_finalizada and not bebida and not ganaste and not perdiste:
 		_progress_fernet += randf_range(50,100)*delta
 		relleno_fernet.value = _progress_fernet
+	elif Input.is_action_pressed("fill") and animacion_finalizada and bebida and not ganaste and not perdiste:
+		_progress += randf_range(50,100)*delta
+		vaso.value = _progress
 	
-	cantidad_coca.text = str(vaso.value)+"%"
-	cantidad_fernet.text = str(relleno_fernet.value-70.)+"%"
+	cantidad_coca.text = str(vaso.value-30.)+"%"
+	cantidad_fernet.text = str(relleno_fernet.value)+"%"
 	
 	if shake_str > 0:
 		#shake_str = lerpf(shake_str,0,shakeFade*delta)
@@ -83,13 +84,13 @@ func _process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("fill") and not ganaste and not perdiste:
-		if bebida:
+		if bebida == false:
 			animation_player.play("girar")
 			#explicacion.hide()
 		else:
 			animation_player.play("tubo2")
 	if event.is_action_released("fill") and not ganaste and not perdiste:
-		if bebida:
+		if bebida == false:
 			animation_player.play("RESET")
 		else:
 			animation_player.play("tubo_idle")
@@ -109,25 +110,26 @@ func _input(event: InputEvent) -> void:
 		if vaso.value == max_coca:
 			#perdiste.text = "GANASTE"
 			#perdiste.show()
+			sprite_espuma.show()
 			check_co_ca.show()
-			bebida = false
-			relleno_fernet.show()
-		if relleno_fernet.value > 100:
+			ganaste = true
+			win.play()
+			animacion_ganar.play("ganar1")
+		if relleno_fernet.value > 30:
 			perdiste = true
 			cruz_fr_ne_th.show()
 			alarma.play()
 			alarma_animacion.show()
 			apply_shake()
 			show_espuma_perdio()
-			alarma.finished.connect(bombaAni	)
+			alarma.finished.connect(bombaAni)
 			#perdiste.show()
 			
-		if relleno_fernet.value == 100:
+		if relleno_fernet.value == 30:
 			check_fr_ne_th.show()
-			sprite_espuma.show()
-			ganaste = true
-			win.play()
-			animacion_ganar.play("ganar1")
+			vaso.show()
+			bebida = true
+			
 			
 
 func animacion(animacion: String) -> void:
@@ -188,7 +190,7 @@ func nukePerdio(animacion: String)->void:
 		sprite_espuma_perdio.hide()
 
 func mostrarRoto()->void:
-	if bebida:
+	if bebida==false:
 		animation_player.play("tubo1roto")
 	else:
 		animation_player.play("tubo2roto")

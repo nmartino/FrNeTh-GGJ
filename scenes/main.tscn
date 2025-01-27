@@ -371,7 +371,7 @@ _data = {
 "brillo": SubResource("Animation_h35bp")
 }
 
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_rglil"]
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_tx5qm"]
 frames = 13
 speed_scale = 15.0
 frame_0/texture = ExtResource("3_y6rfy")
@@ -400,7 +400,7 @@ frame_11/duration = 1.0
 frame_12/texture = ExtResource("7_eecae")
 frame_12/duration = 1.0
 
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_tx5qm"]
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_rglil"]
 frames = 13
 speed_scale = 15.0
 frame_0/texture = ExtResource("2_jrakm")
@@ -860,18 +860,9 @@ libraries = {
 "": SubResource("AnimationLibrary_eka44")
 }
 
-[node name="RellenoFernet" type="TextureProgressBar" parent="."]
-visible = false
-offset_left = 213.0
-offset_top = 260.0
-offset_right = 449.0
-offset_bottom = 450.0
-allow_greater = true
-fill_mode = 3
-texture_progress = SubResource("AnimatedTexture_rglil")
-
 [node name="RellenoCoca" type="TextureProgressBar" parent="."]
 unique_name_in_owner = true
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -883,10 +874,18 @@ offset_right = 474.0
 offset_bottom = 530.0
 grow_horizontal = 2
 grow_vertical = 2
+allow_greater = true
 fill_mode = 3
 texture_progress = SubResource("AnimatedTexture_tx5qm")
 texture_progress_offset = Vector2(0, -5)
-metadata/_edit_lock_ = true
+
+[node name="RellenoFernet" type="TextureProgressBar" parent="."]
+offset_left = 213.0
+offset_top = 260.0
+offset_right = 449.0
+offset_bottom = 450.0
+fill_mode = 3
+texture_progress = SubResource("AnimatedTexture_rglil")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = 340.0
